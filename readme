@@ -5,3 +5,12 @@
 4.  git branch -M main
 5.  git remote add origin https://github.com/RomuloNavas/JS-Intermedium.git
 6.  git push -u origin main
+
+=======Clone=======
+
+1.  git clone https://github.com/RomuloNavas/JS-Intermedium.git
+2.  cd .\JS-Intermedium\
+3.  Modificacion en algo
+4.  git add .
+5.  git commit -m "clone and modification"
+6.  git push
