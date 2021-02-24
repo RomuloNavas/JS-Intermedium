@@ -27,10 +27,10 @@ bind.sayHelloWindow2(); //window
 
 const functions = {
     name: `The function`,
-    logInfoFunction: function () { //function () creates a new this.
+    logInfoFunction: function () { //=function () creates a new `this`.
         console.log(`Name is ${this.name}`);
     },
-    logInfoArrowF: () => { // () => does not create a new this.
+    logInfoArrowF: () => { //= () => does not create a new this.
         console.log(`Name is ${this.name}`);
     }
 }
@@ -50,7 +50,7 @@ const user = {
     name: `Matt Gloss`,
     age: 20,
     userInfo: function (job, phone) {
-        console.group(`${this.name}'s information:`); //group(), we can pass a chart that will be the heading of the group
+        console.group(`${this.name}'s information:`); //.group(), we can pass a chart that will be the heading of the group
         console.log(`Name is ${this.name}`);
         console.log(`Age is ${this.age}`);
         console.log(`Job is ${job}`);
@@ -66,9 +66,9 @@ const userLena = {
 }
 user.userInfo.bind(userLena)(`Chef`, `numberBind`);
 
-user.userInfo.bind(userLena, `Frontend`, `numberBind`)(); //bind() returns a function then we should call it.
-user.userInfo.call(userLena, `Assistant`, `numberCall`); //call() immediately calls this function.
-user.userInfo.apply(userLena, [`assistant`, `numberCall`]); //apply() similar to call, write the parameters inside a []
+user.userInfo.bind(userLena, `Frontend`, `numberBind`)();   //.bind() returns a function then we should call it.
+user.userInfo.call(userLena, `Assistant`, `numberCall`);    //.call() immediately calls this function.
+user.userInfo.apply(userLena, [`assistant`, `numberCall`]); //.apply() similar to call, write the parameters inside a []
 
 
 //==============PROTOTYPES AND THIS====================
