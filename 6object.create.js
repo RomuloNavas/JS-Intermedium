@@ -69,7 +69,9 @@ console.log(person);
 
 //for () does not has access to the key name, because it has enumerable:false
 for (let key in person) {
-  console.log(`Key`, key, person[key]);
+  if (person.hasOwnProperty(key)) { //.hasOwnProperty prevent to pass the key inside the methods of the object (First parameter.). Is recommendable to do this.
+    console.log(`Key`, key, person[key]);
+  }
 };
 
 person.name = `Misael`;  //We can't write a new value because  writable = false by default
