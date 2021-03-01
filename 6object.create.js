@@ -69,7 +69,7 @@ console.log(person);
 
 //for () does not has access to the key name, because it has enumerable:false
 for (let key in person) {
-  if (person.hasOwnProperty(key)) { //.hasOwnProperty prevent to pass the key inside the methods of the object (First parameter.). Is recommendable to do this.
+  if (person.hasOwnProperty(key)) { //.hasOwnProperty prevent to pass the key inside the methods of the object (First parameter.). Is hight recommended to do this.
     console.log(`Key`, key, person[key]);
   }
 };
