@@ -9,19 +9,17 @@ console.log(`start`);
 console.log(`start2`);
 
 window.setTimeout(() => {
-    console.log(`inside Timeout after 2 seconds`)
+  console.log(`inside Timeout after 2 seconds`);
 }, 2000);
 
 function timeout5sec() {
-    console.log(`timeout after 5sec`);
+  console.log(`timeout after 5sec`);
 }
-window.setTimeout(() => timeout5sec(), 5000)
+window.setTimeout(() => timeout5sec(), 5000);
 
 console.log(`end `);
-//Set time 0: 
+//Set time 0:
 window.setTimeout(() => {
-    console.log(`Set timeout 0 seconds`) //=Happens after end
+  console.log(`Set timeout 0 seconds`); //=Happens after end
 }, 0);
 console.log(`end `);
-
-

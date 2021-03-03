@@ -10,35 +10,35 @@ console.log(perObj);
 //for () has access to the key name
 for (let key in perObj) {
   console.log(`Key`, key, perObj[key]);
-};
+}
 
-perObj.name = `Misael`;  //We can write a new value for the key
-perObj.birth = 1999;    //We can write a new value for the key
+perObj.name = `Misael`; //We can write a new value for the key
+perObj.birth = 1999; //We can write a new value for the key
 console.log(perObj);
 
-delete perObj.name;   //We can delete the key
-delete perObj.birth;  //We can delete the key 
+delete perObj.name; //We can delete the key
+delete perObj.birth; //We can delete the key
 console.log(perObj);
 
 console.log(`USING OBJECT.CREATE`);
 //---------------------------Object.create
 
-//.create => Allow us to create a new object. This method contains two parameters. And both of them are objects. 
+//.create => Allow us to create a new object. This method contains two parameters. And both of them are objects.
 let person = Object.create(
-  {//!First parameter.
-    //=We can specify the prototype for the newly created Object. 
+  { //!First parameter.
+    //=We can specify the prototype for the newly created Object.
     //For example, we can create a method
     calculateAge() {
       console.log(`Age:`, new Date().getFullYear() - this.birth);
-    }
+    },
   },
-  {//!Second parameter.
+  { //!Second parameter.
     name: {
       //PROPERTY DESCRIPTORS:
       value: "Romulo",
       //enumerable:false,  //By default false
       //writable:false,  //By default false
-      configurable: true,  //=Allow to delete the key
+      configurable: true, //=Allow to delete the key
     },
     birth: {
       //PROPERTY DESCRIPTORS:
@@ -48,21 +48,21 @@ let person = Object.create(
       configurable: false, //By default false
     },
     age: {
-      get() { //. get returns a value, so we can write inside a function and it will return a value from it. This is very useful 
+      get() { //. get returns a value, so we can write inside a function and it will return a value from it. This is very useful
         return new Date().getFullYear() - this.birth;
       },
       set(value) { //. set to a new value temporary, but will replace it.
         console.log(`Set age`, value);
         console.log(this.age);
-      }
+      },
     },
     background: {
       set(value) {
-        document.body.style.background = `${value}`  //=person.background = `green`
+        document.body.style.background = `${value}`; //=person.background = `green`
         console.log(`Set age`, value);
-      }
-    }
-  }
+      },
+    },
+  },
 );
 // In the browser open this obj. and notice that the key color name is pale.
 console.log(person);
@@ -72,16 +72,14 @@ for (let key in person) {
   if (person.hasOwnProperty(key)) { //.hasOwnProperty prevent to pass the key inside the methods of the object (First parameter.). Is hight recommended to do this.
     console.log(`Key`, key, person[key]);
   }
-};
+}
 
-person.name = `Misael`;  //We can't write a new value because  writable = false by default
-person.birth = 1999;    //The value has been changed because we set writable = true
+person.name = `Misael`; //We can't write a new value because  writable = false by default
+person.birth = 1999; //The value has been changed because we set writable = true
 console.log(person);
 
-delete person.name;   //We can't delete a new value because  configurable = false by default
-delete person.birth;  //We can delete the key because  configurable = true
+delete person.name; //We can't delete a new value because  configurable = false by default
+delete person.birth; //We can delete the key because  configurable = true
 console.log(person);
-
-
 
 person.calculateAge();
